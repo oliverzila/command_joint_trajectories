@@ -1,0 +1,8 @@
+<launch>
+    <arg name="config" default="$(find command_joint_trajectories)/config/command_joint_config.yaml"/>
+    <rosparam file="$(arg config)" command="load"/>
+
+    <node name="command_ref" pkg="command_joint_trajectories"
+        type="command_joint_trajectories" respawn="false" output="screen"
+    />
+</launch>
